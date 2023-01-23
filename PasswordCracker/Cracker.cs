@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -22,20 +21,6 @@ public class Cracker
         }
         return builder.ToString();
     }
-    /*
-    public static async Task<string> CrackAll(string hash, string alphabet, int length, int threadCount, CancellationToken? token)
-    {
-        var tasks = new List<Task<string>>();
-        var prefix = GetCharsBetweenAlphabet(alphabet, threadCount);
-        for (var i = 0; i < threadCount; i++)
-        {
-            var task = Crack(hash, alphabet, length, prefix[i], token);
-            tasks.Add(task);
-        }
-        var results = await Task.WhenAll(tasks);
-        return results.FirstOrDefault(x => x != null);
-    }
-*/
     private string Crack(string hash, 
         string alphabet, 
         int length, 
